@@ -47,31 +47,308 @@
 // p
 // 	+jpg(bla)
 
++font(Lunchbox Bold, lunchbox_bold)  
+=f
+	font-family: "Lunchbox Bold", Arial, sans-serif 
+
+$yellow: #f9ae40
+$orange: #ef5a28
 
 body
-	font-family: Arial, sans-serif 
-	font-size: 12px 
-	line-height: 1.4
+	min-width: 768px
+	+f
+	font-size: 20px 
+	line-height: 1.3
+	color: #fff 
+	-webkit-font-smoothing: antialiased 
+a
+	text-decoration: none
+	color: $yellow
 
 
 // common blocks      
+.wrapper, .bg
+	position: absolute
+	top: 0
+	left: 0
+	right: 0
+	bottom: 0
+.wrapper
+	min-width: 768px
+.bg
+	background-size: cover
+	background-position: 50% 50%  
+	+vertical
+	z-index: 2 
+	.bg__logo
+		position: absolute
+		top: 0
+		left: 0
+		right: 0
+		bottom: 0
+		background-repeat: no-repeat
+		background-position: 50% 50%
 
+.sidebar
+	position: absolute
+	left: 85px 
+	top: 0
+	bottom: 0
+	width: 268px
+	background: rgb(0,0,0) 
+	background: rgba(0,0,0,.85) 
+	+vertical
+	z-index: 10 
+	+r(1020)
+		left: 10px
 
+.open
+	position: absolute
+	top: 15%
+	left: 25%
+	+s(were-open)
+	z-index: 4
 
+.logo
+	position: absolute
+	top: 40px
+	left: 0
+	right: 0 
+	color: #fff 
+	+rh(800)
+		top: 20px
+	+rh(680)
+		top: 10px
+	.logo__pic
+		display: inline-block
+		margin-bottom: 20px
+		+s(logo)
+		vertical-align: top
+	.logo__title
+		position: relative
+		padding: 12px 0
+		font-size: 14px
+		text-transform: uppercase
+		&:before, &:after
+			content: ""
+			position: absolute
+			left: 50%
+			margin-left: -87px 
+			+s(logo-title)
+		&:before
+			top: 0
+		&:after
+			bottom: 0
 
+.nav
+	display: inline-block
+	padding-top: 100px
+	font-size: 0
+	vertical-align: middle
+	.nav__list
+		margin-bottom: 10px
+		li
+			position: relative
+			display: block
+			padding: 19px 0 11px
+			margin-top: -15px
+			+rh(680)
+				padding: 15px 0 5px
+			&:first-child
+				margin: 0
+				padding: 0 0 11px
+				&:before
+					display: none
+			&:before
+				content: ""
+				position: absolute
+				top: 0
+				left: 50%
+				margin-left: -85px
+				+s(nav-wave)
+			&.is-active
+				a
+					&.nav__home
+						+s(nav-home-a)
+					&.nav__coffee
+						+s(nav-coffee-a)
+					&.nav__food
+						+s(nav-food-a)
+					&.nav__juices
+						+s(nav-juices-a)			
+					&.nav__organic
+						+s(nav-organic-a)
+					&.nav__gallery
+						+s(nav-gallery-a)
+					&.nav__contacts
+						+s(nav-contacts-a)	
+			a
+				display: inline-block
+				vertical-align: top
+				&.nav__home
+					+s(nav-home)
+					&:hover
+						+s(nav-home-a)
+				&.nav__coffee
+					+s(nav-coffee)
+					&:hover
+						+s(nav-coffee-a)
+				&.nav__food
+					+s(nav-food)
+					&:hover
+						+s(nav-food-a)
+				&.nav__juices
+					+s(nav-juices)
+					&:hover
+						+s(nav-juices-a)			
+				&.nav__organic	
+					+s(nav-organic)
+					&:hover
+						+s(nav-organic-a)
+				&.nav__gallery
+					+s(nav-gallery)
+					&:hover
+						+s(nav-gallery-a)
+				&.nav__contacts
+					+s(nav-contacts)
+					&:hover
+						+s(nav-contacts-a)
+	.nav__pic
+		display: inline-block
+		+s(nav-sun)
+		vertical-align: top
+		+rh(750)
+			display: none
 
+.social
+	position: absolute
+	left: 0
+	right: 0
+	bottom: 40px
+	font-size: 0
+	+rh(800)
+		bottom: 20px
+	+rh(680)
+		bottom: 10px
+	.social__title
+		display: inline-block
+		margin-bottom: 10px
+		+s(find-us)
+		vertical-align: top
+	.social__list
+		a
+			position: relative
+			display: inline-block
+			margin: 0 5px
+			vertical-align: middle
+			font-size: 14px 
+			text-transform: uppercase
+			color: #fff 
+			i
+				position: relative
+				display: inline-block
+				margin-bottom: 5px
+				vertical-align: top
+			span
+				display: block
+				height: 100% 
+				margin-bottom: 5px
+	.social__fb
+		i
+			+s(fb)
+		&:hover
+			i
+				+s(fb-h)
+		&:active
+			i
+				+s(fb-a)
+	.social__ta
+		i
+			+s(ta)
+		&:hover
+			i
+				+s(ta-h)
+		&:active
+			i
+				+s(ta-a)
+	.social__ig
+		i
+			+s(ig)
+		&:hover
+			i
+				+s(ig-h)
+		&:active
+			i
+				+s(ig-a)
 
+.main
+	position: absolute
+	right: 0
+	bottom: 0
+	width: 460px
+	padding: 15px
+	background: rgb(0,0,0) 
+	background: rgba(0,0,0,.6) 
+	z-index: 12 
 
+.text
+	padding: 35px
+	background: url(../img/border-wave.png) repeat-x 0 0, url(../img/border-wave.png) repeat-x 0 100%, url(../img/border-wave-vert.png) repeat-y 0 0, url(../img/border-wave-vert.png) repeat-y 100% 100%
 
-
-
-
-
-
-
-
-
-
+.coffee
+	position: absolute
+	top: 0
+	right: 0
+	bottom: 0
+	width: 490px
+	background: rgb(0,0,0) 
+	background: rgba(0,0,0,.6) 
+	overflow: auto
+	z-index: 12
+	.coffee__menu
+		display: table
+		width: 100%
+		padding: 40px 20px
+		box-sizing: border-box
+	.coffee__cell
+		display: table-cell
+		vertical-align: middle
+		text-align: right
+		text-transform: uppercase
+		font-size: 21px
+		&:first-child
+			text-align: left
+		span
+			display: block
+	.coffee__pic
+		overflow: hidden
+		img
+			display: block
+	.coffee__in
+		display: -webkit-flex
+		display: -ms-flex
+		display: flex
+		min-height: 100%
+		-webkit-flex-direction: column
+		-ms-flex-direction: column
+		flex-direction: column
+	.coffee__section
+		position: relative
+		-webkit-flex: 1
+		-ms-flex: 1
+		flex: 1
+		display: -webkit-flex
+		display: -ms-flex
+		display: flex
+		-webkit-flex-direction: column
+		-ms-flex-direction: column
+		flex-direction: column
+		&:first-child
+			padding: 15px 
+		&:last-child
+			-webkit-justify-content: flex-end
+			-webkit-ms-content: flex-end
+			justify-content: flex-end
 
 
 
