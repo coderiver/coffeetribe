@@ -100,7 +100,8 @@ a
 	+vertical
 	z-index: 10 
 	+r(1020)
-		left: 10px
+		left: 0
+		width: 278px
 
 .open
 	position: absolute
@@ -295,7 +296,7 @@ a
 	padding: 35px
 	background: url(../img/border-wave.png) repeat-x 0 0, url(../img/border-wave.png) repeat-x 0 100%, url(../img/border-wave-vert.png) repeat-y 0 0, url(../img/border-wave-vert.png) repeat-y 100% 100%
 
-.coffee
+.content
 	position: absolute
 	top: 0
 	right: 0
@@ -304,13 +305,25 @@ a
 	background: rgb(0,0,0) 
 	background: rgba(0,0,0,.6) 
 	overflow: auto
+	-webkit-overflow-scrolling: touch
 	z-index: 12
-	.coffee__menu
+	&.content_organic
+		.content__section
+			background-size: cover 
+		.content__pic
+			font-size: 0
+			overflow: hidden
+			img
+				width: 50%
+				vertical-align: top
+				&:first-child
+					width: 100%
+	.content__menu
 		display: table
 		width: 100%
 		padding: 40px 20px
 		box-sizing: border-box
-	.coffee__cell
+	.content__cell
 		display: table-cell
 		vertical-align: middle
 		text-align: right
@@ -320,11 +333,10 @@ a
 			text-align: left
 		span
 			display: block
-	.coffee__pic
+	.content__pic
+		font-size: 0
 		overflow: hidden
-		img
-			display: block
-	.coffee__in
+	.content__in
 		display: -webkit-flex
 		display: -ms-flex
 		display: flex
@@ -332,7 +344,7 @@ a
 		-webkit-flex-direction: column
 		-ms-flex-direction: column
 		flex-direction: column
-	.coffee__section
+	.content__section
 		position: relative
 		-webkit-flex: 1
 		-ms-flex: 1
@@ -343,18 +355,88 @@ a
 		-webkit-flex-direction: column
 		-ms-flex-direction: column
 		flex-direction: column
-		&:first-child
-			padding: 15px 
 		&:last-child
 			-webkit-justify-content: flex-end
 			-webkit-ms-content: flex-end
 			justify-content: flex-end
+		.text
+			margin: 15px
 
+.gallery
+	position: absolute
+	top: 0
+	left: 0
+	right: 0
+	bottom: 0
+	padding: 20px 20px 0 372px 
+	font-size: 0
+	overflow: auto
+	-webkit-overflow-scrolling: touch
+	+r(1020)
+		padding: 20px 20px 0 298px
+	.gallery__item
+		position: relative
+		float: left
+		width: 200px
+		margin-bottom: 20px
+		&:hover
+			&:before, &:after
+				visibility: visible
+		&:before, &:after
+			content: ""
+			position: absolute
+			visibility: hidden
+		&:before
+			top: 0
+			left: 0
+			right: 0
+			bottom: 0
+			background: rgba($yellow, .75)
+		&:after
+			top: 50%
+			left: 50%
+			margin: -16px 0 0 -32px
+			+s(eye)
 
+.up
+	position: fixed
+	right: 30px
+	bottom: 50px
+	+s(up)
+	z-index: 999 
+	&:hover
+		+sp(up-h)
 
-
-
-
+.contacts
+	position: absolute
+	top: 0
+	right: 0
+	bottom: 0
+	width: 450px
+	padding: 20px
+	background: rgb(0,0,0) 
+	background: rgba(0,0,0,.9) 
+	overflow: auto
+	-webkit-overflow-scrolling: touch
+	z-index: 12 
+	.contacts__in
+		padding: 20px
+		background: url(../img/border-wave.png) repeat-x 0 0, url(../img/border-wave.png) repeat-x 0 100%, url(../img/border-wave-vert.png) repeat-y 0 0, url(../img/border-wave-vert.png) repeat-y 100% 100%
+	.contacts__content
+		margin-bottom: 20px
+		font-size: 21px
+		text-transform: uppercase
+		a
+			color: #FFF 
+		table
+			width: auto
+		td
+			&:first-child
+				padding-right: 10px
+	.contacts__map
+		margin-bottom: 20px
+		width: 410px
+		height: 180px
 
 
 

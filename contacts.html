@@ -1,0 +1,95 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Template</title>
+	<meta name="viewport" content="initial-scale=1"/>
+	<!-- <meta name="viewport" content="width=1200"> -->
+	<link rel="stylesheet" media="screen" href="css/screen.css" >
+	<!--[if IE]><script src="js/html5shiv.js"></script><![endif]-->
+</head>
+<body>
+<!-- wrapper -->
+<div class="wrapper">
+	<!-- bg -->
+	<div class="bg" style="background-image: url(img/contacts-bg.jpg)"></div>
+	<!-- sidebar -->
+	<div class="sidebar">
+		<!-- nav -->
+		<nav class="nav">
+			<ul class="nav__list">
+				<li><a href="#" class="nav__home">home</a></li>
+				<li><a href="#" class="nav__coffee">coffee</a></li>
+				<li><a href="#" class="nav__food">food</a></li>
+				<li><a href="#" class="nav__juices">juices</a></li>
+				<li><a href="#" class="nav__organic">organic</a></li>
+				<li><a href="#" class="nav__gallery">gallery</a></li>
+				<li class="is-active"><a href="#" class="nav__contacts">contacts</a></li>
+			</ul>
+			<div class="nav__pic"></div>
+		</nav>
+		<!-- logo -->
+		<a class="logo" href="#">
+			<div class="logo__pic"></div>
+			<div class="logo__title">coffee shop & restaurant</div>
+		</a>
+		<!-- social -->
+		<div class="social">
+			<div class="social__title"></div>
+			<div class="social__list">
+				<a class="social__fb" href="#"><i></i><span>facebook</span></a>
+				<a class="social__ta" href="#"><i></i><span>tripadvisor</span></a>
+				<a class="social__ig" href="#"><i></i><span>instagram</span></a>
+			</div>
+		</div>
+	</div>
+	<!-- contacts -->
+	<div class="contacts">
+		<div class="contacts__in">
+			<div class="contacts__content">
+				<p>Chalong district</p>
+				<p style="color: #f9ae40">1/9-10 Moo 9, Visit Rd., T. Chalong, Amphoe Muang Phuket, Phuket, Thailand</p>
+				<table>
+					<tr>
+						<td>phone:</td>
+						<td>+66 76 280 005</td>
+					</tr>
+					<tr>
+						<td>e-mail:</td>
+						<td><a href="mailto:coffee@coffeetribe.co.th">coffee@coffeetribe.co.th</a></td>
+					</tr>
+					<tr>
+						<td>website:</td>
+						<td><a href="http://www.coffeetribe.co.th">www.coffeetribe.co.th</a></td>
+					</tr>
+				</table>
+			</div>
+			<div id="map" class="contacts__map"></div>
+			<div class="contacts__content">
+				<p>working hours:</p>
+				<p style="color: #f9ae40">Monday - Sunday 8.00 a.m - 10 p.m.</p>
+			</div>
+			<div class="contacts__pic">
+				<img src="img/contacts-house.jpg" alt="">
+			</div>
+		</div>
+	</div>
+</div>
+<!-- load scripts -->
+<script src="js/lib/head.js" data-headjs-load="js/init.js"></script>
+<!-- map -->
+<script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
+<script>
+	var map;
+	function initialize() {
+	  var mapOptions = {
+	    zoom: 16,
+	    scrollwheel: false,
+	    center: new google.maps.LatLng(7.822249, 98.341376)
+	  };
+	  map = new google.maps.Map(document.getElementById('map'), mapOptions);
+	}
+	google.maps.event.addDomListener(window, 'load', initialize);
+</script>
+</body>
+</html>
