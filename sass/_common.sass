@@ -239,15 +239,21 @@ a
 			i
 				position: relative
 				display: inline-block
-				margin-bottom: 5px
+				margin-bottom: 10px
 				vertical-align: top
 			span
 				display: block
-				height: 100% 
-				margin-bottom: 5px
+				+hidetext
+				&:before
+					content: ""
+					display: inline-block
+					vertical-align: top
 	.social__fb
 		i
 			+s(fb)
+		span
+			&:before
+				+s(fb-title)
 		&:hover
 			i
 				+s(fb-h)
@@ -257,6 +263,9 @@ a
 	.social__ta
 		i
 			+s(ta)
+		span
+			&:before
+				+s(ta-title)
 		&:hover
 			i
 				+s(ta-h)
@@ -266,6 +275,9 @@ a
 	.social__ig
 		i
 			+s(ig)
+		span
+			&:before
+				+s(ig-title)
 		&:hover
 			i
 				+s(ig-h)
