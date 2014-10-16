@@ -101,10 +101,12 @@ a { text-decoration: none; color: #f9ae40; }
 .text { padding: 35px; background: url(../img/border-wave.png) repeat-x 0 0, url(../img/border-wave.png) repeat-x 0 100%, url(../img/border-wave-vert.png) repeat-y 0 0, url(../img/border-wave-vert.png) repeat-y 100% 100%; }
 
 .content { position: absolute; top: 0; right: 0; bottom: 0; width: 490px; background: black; background: rgba(0, 0, 0, 0.6); overflow: auto; -webkit-overflow-scrolling: touch; z-index: 12; }
-.content .content__menu { display: table; width: 100%; padding: 40px 50px; box-sizing: border-box; }
+.content .content__menu { display: table; width: 100%; padding: 40px 35px; box-sizing: border-box; }
 .content .content__cell { display: table-cell; vertical-align: middle; text-align: right; text-transform: uppercase; font-size: 21px; }
 .content .content__cell:first-child { text-align: left; }
 .content .content__cell span { display: block; }
+.content .content__cell a { border-bottom: 2px solid transparent; }
+.content .content__cell a:hover { border-color: #f9ae40; }
 .content .content__pic { background-size: cover; background-position: 50% 50%; }
 .content .content__in { padding: 15px; }
 
