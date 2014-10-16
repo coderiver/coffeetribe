@@ -307,21 +307,10 @@ a
 	bottom: 0
 	width: 490px
 	background: rgb(0,0,0) 
-	background: rgba(0,0,0,.6) 
+	background: rgba(0,0,0,.6)
 	overflow: auto
 	-webkit-overflow-scrolling: touch
 	z-index: 12
-	&.content_organic
-		.content__section
-			background-size: cover 
-		.content__pic
-			font-size: 0
-			overflow: hidden
-			img
-				width: 50%
-				vertical-align: top
-				&:first-child
-					width: 100%
 	.content__menu
 		display: table
 		width: 100%
@@ -338,33 +327,10 @@ a
 		span
 			display: block
 	.content__pic
-		font-size: 0
-		overflow: hidden
+		background-size: cover 
+		background-position: 50% 50% 
 	.content__in
-		display: -webkit-flex
-		display: -ms-flex
-		display: flex
-		min-height: 100%
-		-webkit-flex-direction: column
-		-ms-flex-direction: column
-		flex-direction: column
-	.content__section
-		position: relative
-		-webkit-flex: 1
-		-ms-flex: 1
-		flex: 1
-		display: -webkit-flex
-		display: -ms-flex
-		display: flex
-		-webkit-flex-direction: column
-		-ms-flex-direction: column
-		flex-direction: column
-		&:last-child
-			-webkit-justify-content: flex-end
-			-webkit-ms-content: flex-end
-			justify-content: flex-end
-		.text
-			margin: 15px
+		padding: 15px
 
 .gallery
 	position: absolute
